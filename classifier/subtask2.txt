@@ -1,0 +1,121 @@
+bash-4.2$ ./opencv_createsamples -img dart.bmp -vec dart.vec -w 20 -h 20 -num 500 -maxidev 80 -maxxangle 0.8 -maxyangle 0.8 -maxzangle 0.2
+Info file name: (NULL)
+Img file name: dart.bmp
+Vec file name: dart.vec
+BG  file name: (NULL)
+Num: 500
+BG color: 0
+BG threshold: 80
+Invert: FALSE
+Max intensity deviation: 80
+Max x angle: 0.8
+Max y angle: 0.8
+Max z angle: 0.2
+Show samples: FALSE
+Width: 20
+Height: 20
+Create training samples from single image applying distortions...
+Done  
+
+--------------------------------------------------------------------------------------------------------------------
+
+bash-4.2$ ./opencv_traincascade -data dartcascade -vec dart.vec -bg negatives.dat -numPos 500 -numNeg 500 -numStages 3 -maxDepth 1 -w 20 -h 20 -minHitRate 0.999 -maxFalseAlarmRate 0.05 -mode ALL
+PARAMETERS:
+cascadeDirName: dartcascade
+vecFileName: dart.vec
+bgFileName: negatives.dat
+numPos: 500
+numNeg: 500
+numStages: 3
+precalcValBufSize[Mb] : 256
+precalcIdxBufSize[Mb] : 256
+stageType: BOOST
+featureType: HAAR
+sampleWidth: 20
+sampleHeight: 20
+boostType: GAB
+minHitRate: 0.999
+maxFalseAlarmRate: 0.05
+weightTrimRate: 0.95
+maxDepth: 1
+maxWeakCount: 100
+mode: ALL
+
+===== TRAINING 0-stage =====
+<BEGIN
+POS count : consumed   500 : 500
+NEG count : acceptanceRatio    500 : 1
+Precalculation time: 7
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|        1|
++----+---------+---------+
+|   4|        1|    0.292|
++----+---------+---------+
+|   5|        1|    0.132|
++----+---------+---------+
+|   6|        1|     0.06|
++----+---------+---------+
+|   7|        1|    0.066|
++----+---------+---------+
+|   8|        1|        0|
++----+---------+---------+
+END>
+
+===== TRAINING 1-stage =====
+<BEGIN
+POS count : consumed   500 : 500
+NEG count : acceptanceRatio    500 : 0.0100078
+Precalculation time: 7
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|    0.466|
++----+---------+---------+
+|   4|        1|     0.23|
++----+---------+---------+
+|   5|        1|    0.074|
++----+---------+---------+
+|   6|        1|    0.054|
++----+---------+---------+
+|   7|        1|    0.056|
++----+---------+---------+
+|   8|        1|    0.016|
++----+---------+---------+
+END>
+
+===== TRAINING 2-stage =====
+<BEGIN
+POS count : consumed   500 : 500
+NEG count : acceptanceRatio    500 : 0.000430664
+Precalculation time: 6
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|    0.406|
++----+---------+---------+
+|   4|        1|     0.25|
++----+---------+---------+
+|   5|        1|    0.252|
++----+---------+---------+
+|   6|        1|    0.258|
++----+---------+---------+
+|   7|        1|    0.088|
++----+---------+---------+
+|   8|        1|        0|
++----+---------+---------+
+END>
+
