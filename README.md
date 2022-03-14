@@ -19,4 +19,5 @@ python subtask3.py dart0.jpg
 python subtask4.py dart0.jpg
 
 NOTE1: The program generates 4 images per image: edge detected image, hough circle space, hough line space, and final image with red and green squares
+
 NOTE2: Hough line space is resized to (500, 500)
